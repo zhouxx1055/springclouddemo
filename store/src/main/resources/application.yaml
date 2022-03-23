@@ -1,0 +1,22 @@
+server:
+  port: 8002
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3307/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  application:
+    name: nacos-store-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+#端口暴漏
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

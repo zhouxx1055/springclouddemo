@@ -1,0 +1,33 @@
+server:
+  port: 8090
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3307/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  application:
+    name: nacos-miaosha-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        namespace: public
+    loadbalancer:
+      ribbon:
+        enabled: true #SrpingCloud中禁用ribbon (2021前版本SpringCloud默认ribbon修改负载均衡策略先禁用ribbon)
+
+service-url:
+  nacos-order-service: http://nacos-order-provider
+  nacos-store-service: http://nacos-store-provider
+#端口暴漏
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
