@@ -36,7 +36,7 @@ public class Order {
     }
 
     @GetMapping("/add")
-    public String test2(@RequestParam String name){
+    public String add(@RequestParam String name){
         log.info(serverName+serverPort+"开始下单。。。");
         log.info(serverName+serverPort+"下单。。。");
         log.info(serverName+serverPort+"完成下单。。。");

@@ -25,7 +25,7 @@ public class Store {
     }
 
     @GetMapping("/add")
-    public String test2(@RequestParam String name){
+    public String add(@RequestParam String name){
         log.info(serverName+serverPort+"开始库存。。。");
         log.info(serverName+serverPort+"库存。。。");
         log.info(serverName+serverPort+"完成库存。。。");
