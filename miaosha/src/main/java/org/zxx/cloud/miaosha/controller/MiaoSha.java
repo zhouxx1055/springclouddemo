@@ -34,11 +34,19 @@ public class MiaoSha {
         log.info(serverName + serverPort + "开始秒杀。。。");
         log.info(serverName + serverPort + "秒杀。。。");
 
-        String orderResult = restTemplate.getForObject(oderServerURL + "/api/v1/order/add?name=" + name, String.class);
-        log.info(orderResult);
-        String storeResult = restTemplate.getForObject(storeServerURL + "/api/v1/store/add?name=" + name, String.class);
-        log.info(storeResult);
+        try {
+            String orderResult = restTemplate.getForObject(oderServerURL + "/api/v1/order/add?name=" + name, String.class);
+            log.info(orderResult);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        try {
+            String storeResult = restTemplate.getForObject(storeServerURL + "/api/v1/store/add?name=" + name, String.class);
+            log.info(storeResult);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
         log.info(serverName + serverPort + "完成秒杀。。。");
-        return serverName + serverPort +Thread.currentThread().getName() + " MiaoSha: Hi " + name;
+        return serverName + serverPort + Thread.currentThread().getName() + " MiaoSha: Hi " + name;
     }
 }

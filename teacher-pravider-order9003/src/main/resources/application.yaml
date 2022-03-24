@@ -1,0 +1,20 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+        # 修改服务注册中的命名空间 默认是注册到public
+        namespace: b631b99f-48e7-47e7-9768-709f27bbf914
+        # 修改服务注册到nacos上分组名称，默认是DEFAULT_GROUP
+        group: miaosha
+#端口暴漏
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

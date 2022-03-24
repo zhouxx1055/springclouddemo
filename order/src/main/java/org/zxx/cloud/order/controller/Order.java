@@ -15,8 +15,8 @@ import javax.annotation.Resource;
 @Slf4j
 public class Order {
 
-    @Resource
-    private RestTemplate restTemplate;
+//    @Resource
+//    private RestTemplate restTemplate;
     @Value("${spring.application.name}")
     private String serverName;
     @Value("${server.port}")
@@ -28,12 +28,12 @@ public class Order {
         return Thread.currentThread().getName()+" Order: Hi "+name;
     }
 
-    @GetMapping("/test1")
-    public String test1(@RequestParam String name){
-        String result = restTemplate.getForObject("http://localhost:8002/api/v1/store/test?name=" + name, String.class);
-
-        return Thread.currentThread().getName()+" Order: Hi "+name;
-    }
+//    @GetMapping("/test1")
+//    public String test1(@RequestParam String name){
+//        String result = restTemplate.getForObject("http://localhost:8002/api/v1/store/test?name=" + name, String.class);
+//
+//        return Thread.currentThread().getName()+" Order: Hi "+name;
+//    }
 
     @GetMapping("/add")
     public String add(@RequestParam String name){
