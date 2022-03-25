@@ -23,7 +23,7 @@
     <module>teacher-pravider-order9004</module>
     <module>teacher-pravider-order9005</module>
     <module>teacher-consumer-order</module>
-    <!--    <module>cloud-provider-payment8001</module>-->
+        <module>teacher-consumer-order-mylb</module>
 <!--    <module>cloud-consumer-order80</module>-->
 <!--    <module>cloud-api-commons</module>-->
 <!--    <module>cloud-eureka-server7001</module>-->
