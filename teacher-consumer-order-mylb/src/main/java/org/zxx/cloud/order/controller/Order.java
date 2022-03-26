@@ -107,6 +107,7 @@ public class Order {
         List<ServiceInstance> storeInstances = discoveryClient.getInstances("nacos-store-provider");
 
         if (paymentInstances == null || paymentInstances.isEmpty() || storeInstances == null || storeInstances.isEmpty()) {
+            log.error("没有可用的服务，请检查!");
             return "没有可用的服务，请检查!";
         }
         log.info("paymentInstances.size:"+paymentInstances.size());

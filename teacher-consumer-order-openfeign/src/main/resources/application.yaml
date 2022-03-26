@@ -1,0 +1,32 @@
+server:
+  port: 83
+
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 修改服务注册中的命名空间 默认是注册到public
+        namespace: b631b99f-48e7-47e7-9768-709f27bbf914
+        # 修改服务注册到nacos上分组名称，默认是DEFAULT_GROUP
+#        group: miaosha
+
+#设置feign客户端超时时间(OpenFeign默认支持ribbon)
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下, 两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # feign日志以 debug 级别监控 com.atguigu.springcloud.service.PaymentFeignService 接口
+    com.atguigu.springcloud.service.PaymentFeignService: debug
+
+
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+  nacos-store-service: http://nacos-store-provider

@@ -45,8 +45,8 @@ public class MyLoadBalancerImpl implements MyLoadBalancer{
         int size=serviceInstances.size();
         int orderNumber=getAndIncrement();
         int index = orderNumber % size;
-        if(size==2 && orderNumber%2==0){
-            // 防止偶数次调用时，如果服务数是2时，下标一直是0
+        if(size%2==0 && orderNumber%2==0){
+            // 防止偶数次调用时，如果服务数是偶数时，下标一直是0
             index= ThreadLocalRandom.current().nextInt(0, 4) % size;
 //            System.out.println("*****index: " + index);
         }
