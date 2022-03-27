@@ -3,11 +3,8 @@ package org.zxx.cloud.order.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 import org.zxx.cloud.module.vo.input.User;
-import org.zxx.cloud.order.conf.PassToken;
-
-import javax.annotation.Resource;
+import org.zxx.cloud.util.PassToken;
 
 @RestController
 @RequestMapping("/api/v1/order")

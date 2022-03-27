@@ -1,4 +1,4 @@
-package org.zxx.cloud.order.conf;
+package org.zxx.cloud.util;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

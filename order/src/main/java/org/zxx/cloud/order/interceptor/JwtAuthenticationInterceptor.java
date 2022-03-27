@@ -5,7 +5,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.zxx.cloud.exception.JwtException;
 import org.zxx.cloud.module.dto.UserDTO;
-import org.zxx.cloud.order.conf.PassToken;
+import org.zxx.cloud.util.PassToken;
 import org.zxx.cloud.util.JwtUtils;
 
 import javax.servlet.http.HttpServletRequest;
