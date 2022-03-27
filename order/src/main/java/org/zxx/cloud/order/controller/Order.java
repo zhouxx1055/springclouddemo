@@ -2,11 +2,10 @@ package org.zxx.cloud.order.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.zxx.cloud.module.vo.input.User;
+import org.zxx.cloud.order.conf.PassToken;
 
 import javax.annotation.Resource;
 
@@ -35,12 +34,23 @@ public class Order {
 //        return Thread.currentThread().getName()+" Order: Hi "+name;
 //    }
 
+    @PassToken
     @GetMapping("/add")
     public String add(@RequestParam String name){
         log.info(serverName+serverPort+"开始下单。。。");
         log.info(serverName+serverPort+"下单。。。");
         log.info(serverName+serverPort+"完成下单。。。");
         String result=serverName+serverPort+"("+Thread.currentThread().getName()+")"+name+" 下单成功 ";
+        return result;
+    }
+
+    @PassToken
+    @PostMapping("/add1")
+    public String add11(@RequestBody User user){
+        log.info(serverName+serverPort+"开始下单。。。");
+        log.info(serverName+serverPort+"下单。。。");
+        log.info(serverName+serverPort+"完成下单。。。");
+        String result=serverName+serverPort+"("+Thread.currentThread().getName()+")"+user.getId()+" 下单成功 ";
         return result;
     }
 
