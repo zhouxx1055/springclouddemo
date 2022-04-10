@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(JwtException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResultVO<Object> JwtExceptionHandler(JwtException e) {
-        log.error("", e);
+        log.error("token异常：", e);
         return ResultVO.fail(BaseResultError.API_LOGIN_INVALID_TOKEN);
     }
 
